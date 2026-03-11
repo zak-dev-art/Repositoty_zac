@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moringa Tech Hub Case Study - Zach</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .case-study-container {
+            margin-left: 260px;
+            min-height: 100vh;
+            padding: 80px 0 40px;
+            overflow-y: auto;
+        }
+
+        .case-study-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 40px 0 0 0;
+            padding: 0 40px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .case-study-back:hover {
+            gap: 12px;
+        }
+
+        .case-study-hero {
+            padding: 60px 40px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(29, 185, 84, 0.1) 0%, transparent 100%);
+            border-bottom: 1px solid var(--bg-tertiary);
+            margin-bottom: 80px;
+        }
+
+        .case-study-hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+            letter-spacing: -1px;
+        }
+
+        .case-study-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .case-study-hero-image {
+            margin-top: 40px;
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .case-study-hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .case-study-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .case-study-section {
+            margin-bottom: 80px;
+            animation: slideInUp 0.6s ease forwards;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .case-study-section:nth-child(1) { animation-delay: 0.1s; }
+        .case-study-section:nth-child(2) { animation-delay: 0.2s; }
+        .case-study-section:nth-child(3) { animation-delay: 0.3s; }
+        .case-study-section:nth-child(4) { animation-delay: 0.4s; }
+        .case-study-section:nth-child(5) { animation-delay: 0.5s; }
+        .case-study-section:nth-child(6) { animation-delay: 0.6s; }
+
+        .case-study-section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+            letter-spacing: -0.5px;
+        }
+
+        .case-study-section p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+        }
+
+        .case-study-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .case-study-section li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .case-study-section li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .tech-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--bg-secondary);
+            padding: 12px 20px;
+            border-radius: 8px;
+            border: 1px solid var(--bg-tertiary);
+            color: var(--text-primary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .tech-badge:hover {
+            background: var(--bg-tertiary);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .tech-badge i {
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+
+        .case-study-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .case-study-img-wrapper {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--bg-tertiary);
+        }
+
+        .case-study-img-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .case-study-links {
+            display: flex;
+            gap: 20px;
+            margin-top: 60px;
+            padding-top: 60px;
+            border-top: 1px solid var(--bg-tertiary);
+        }
+
+        .case-study-link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .case-study-link-btn.primary {
+            background: var(--primary);
+            color: var(--bg-primary);
+        }
+
+        .case-study-link-btn.primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(29, 185, 84, 0.3);
+        }
+
+        .case-study-link-btn.secondary {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .case-study-link-btn.secondary:hover {
+            background: var(--primary);
+            color: var(--bg-primary);
+        }
+
+        .case-study-navigation {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            margin-top: 100px;
+            padding-top: 60px;
+            border-top: 1px solid var(--bg-tertiary);
+            flex-wrap: wrap;
+        }
+
+        .nav-project {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .nav-project a {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            padding: 20px;
+            border: 1px solid var(--bg-tertiary);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-project a:hover {
+            background: var(--bg-secondary);
+            border-color: var(--primary);
+        }
+
+        .nav-project-text h4 {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-project-text p {
+            color: var(--text-primary);
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .nav-project-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .case-study-container {
+                margin-left: 0;
+                padding: 60px 0 40px;
+            }
+
+            .case-study-back {
+                padding: 0 20px;
+            }
+
+            .case-study-hero {
+                padding: 40px 20px;
+                margin-bottom: 60px;
+            }
+
+            .case-study-hero h1 {
+                font-size: 2rem;
+            }
+
+            .case-study-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .case-study-content {
+                padding: 0 20px;
+            }
+
+            .case-study-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .case-study-images {
+                grid-template-columns: 1fr;
+            }
+
+            .case-study-links,
+            .case-study-navigation {
+                flex-direction: column;
+            }
+
+            .case-study-link-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .case-study-nav-arrow {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-content">
+            <div class="sidebar-logo">
+                <div class="logo-circle">Zach</div>
+            </div>
+            <nav class="sidebar-nav">
+                <ul class="nav-menu">
+                    <li><a href="index.html#home" class="nav-link"><i class="fas fa-home"></i><span>Home</span></a></li>
+                    <li><a href="index.html#about" class="nav-link"><i class="fas fa-user"></i><span>About</span></a></li>
+                    <li><a href="index.html#skills" class="nav-link"><i class="fas fa-code"></i><span>Skills</span></a></li>
+                    <li><a href="index.html#projects" class="nav-link"><i class="fas fa-briefcase"></i><span>Projects</span></a></li>
+                    <li><a href="index.html#contact" class="nav-link"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="sidebar-footer">
+            <a href="https://github.com/zak-dev-art" class="sidebar-social" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/zach-ndung-u-24347b2ab/?trk=opento_sprofile_details" class="sidebar-social" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="sidebar-social"><i class="fab fa-twitter"></i></a>
+        </div>
+    </aside>
+
+    <button class="mobile-hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <div class="case-study-container">
+        <a href="index.html#projects" class="case-study-back">
+            <i class="fas fa-arrow-left"></i>
+            Back to Projects
+        </a>
+
+        <div class="case-study-hero">
+            <h1>Moringa Tech Hub</h1>
+            <p class="case-study-subtitle">A comprehensive learning platform providing verified tech industry information, mentorship, and inspiration for aspiring tech professionals in East Africa.</p>
+            <div class="case-study-hero-image">
+                <img src="https://via.placeholder.com/800x450?text=Moringa+Tech+Hero" alt="Moringa Tech Hub Platform">
+            </div>
+        </div>
+
+        <div class="case-study-content">
+            <div class="case-study-section">
+                <h2>The Problem</h2>
+                <p>Aspiring tech professionals in East Africa face significant barriers to quality information about career paths, technologies, and opportunities. Much of the available information is scattered, unverified, or outdated. Young developers need a trusted, centralized resource with genuine industry insights and mentorship.</p>
+            </div>
+
+            <div class="case-study-section">
+                <h2>My Solution</h2>
+                <p>I built Moringa Tech Hub as a comprehensive platform connecting students with verified resources, experienced mentors, and industry-relevant information. The platform features curated content, live Q&A sessions, user-generated guides, and a mentorship matching system.</p>
+                <p>The design prioritizes accessibility and engagement, with features like gamification (badges and achievements), a vibrant community forum, and personalized content recommendations based on user interests and skill levels.</p>
+            </div>
+
+            <div class="case-study-section">
+                <h2>Tech Stack Used</h2>
+                <div class="tech-stack">
+                    <div class="tech-badge">
+                        <i class="fab fa-react"></i>
+                        React
+                    </div>
+                    <div class="tech-badge">
+                        <i class="fas fa-cube"></i>
+                        Redux Toolkit
+                    </div>
+                    <div class="tech-badge">
+                        <i class="fas fa-palette"></i>
+                        Tailwind CSS
+                    </div>
+                    <div class="tech-badge">
+                        <i class="fab fa-python"></i>
+                        FastAPI
+                    </div>
+                    <div class="tech-badge">
+                        <i class="fas fa-database"></i>
+                        MongoDB
+                    </div>
+                    <div class="tech-badge">
+                        <i class="fas fa-cloud"></i>
+                        Vercel & Render
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-study-section">
+                <h2>Key Features Delivered</h2>
+                <ul>
+                    <li>Curated learning resources categorized by skill level and technology</li>
+                    <li>Expert-verified articles and guides written by industry professionals</li>
+                    <li>Live mentorship matching algorithm connecting students with mentors</li>
+                    <li>Community forum with moderated discussions and Q&A</li>
+                    <li>Gamification system with badges, points, and achievement milestones</li>
+                    <li>Personalized learning paths and progress tracking dashboard</li>
+                    <li>Job board featuring opportunities specifically for African developers</li>
+                </ul>
+            </div>
+
+            <div class="case-study-section">
+                <h2>Challenges & Learnings</h2>
+                <p><strong>Challenge 1: Content Verification at Scale</strong> — Ensuring all content is accurate and verified while allowing community contributions required building a robust moderation system.</p>
+                <p><em>Solution:</em> Implemented a multi-tier review process with expert verification for critical content and community upvoting for guides.</p>
+                <p><strong>Challenge 2: Matching Algorithm Complexity</strong> — Creating an effective mentorship matching system that considers expertise, availability, and learning goals was computationally complex.</p>
+                <p><em>Solution:</em> Used Redux for efficient state management and optimized database queries to ensure quick, accurate mentor recommendations.</p>
+                <p><strong>Key Learning:</strong> Building community-driven platforms requires balancing user autonomy with quality control — too much moderation stifles growth, too little creates chaos.</p>
+            </div>
+
+            <div class="case-study-section">
+                <h2>Results & Screenshots</h2>
+                <div class="case-study-images">
+                    <div class="case-study-img-wrapper">
+                        <img src="https://via.placeholder.com/400x300?text=Learning+Path" alt="Learning Path Dashboard">
+                    </div>
+                    <div class="case-study-img-wrapper">
+                        <img src="https://via.placeholder.com/400x300?text=Community+Forum" alt="Community Forum">
+                    </div>
+                    <div class="case-study-img-wrapper">
+                        <img src="https://via.placeholder.com/400x300?text=Mentor+Profiles" alt="Mentor Profiles">
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-study-links">
+                <a href="https://moringa-tech-hub-kappa.vercel.app/" target="_blank" rel="noopener noreferrer" class="case-study-link-btn primary">
+                    <i class="fas fa-external-link-alt"></i>
+                    Visit Live Demo
+                </a>
+                <a href="https://github.com/zak-dev-art" target="_blank" rel="noopener noreferrer" class="case-study-link-btn secondary">
+                    <i class="fab fa-github"></i>
+                    View Source Code
+                </a>
+            </div>
+
+            <div class="case-study-navigation">
+                <div class="nav-project">
+                    <a href="farm-fresh-case-study.html">
+                        <div class="nav-project-text">
+                            <h4>← Previous</h4>
+                            <p>Farm Fresh</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="nav-project">
+                    <a href="index.html#projects">
+                        <div class="nav-project-text">
+                            <h4>Back →</h4>
+                            <p>To Projects</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

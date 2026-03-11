@@ -6,45 +6,52 @@
     <title>Zach - Full Stack Developer</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <div class="z-logo">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path d="M3 3h18v4L9 19h12v2H3v-4l12-12H3V3z" fill="url(#gradient)"/>
-                        <defs>
-                            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#00ff88"/>
-                                <stop offset="100%" stop-color="#0066ff"/>
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                </div>
+    <aside class="sidebar">
+        <div class="sidebar-content">
+            <div class="sidebar-logo">
+                <div class="logo-circle">Zach</div>
             </div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <nav class="sidebar-nav">
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link"><i class="fas fa-home"></i><span>Home</span></a></li>
+                    <li><a href="#about" class="nav-link"><i class="fas fa-user"></i><span>About</span></a></li>
+                    <li><a href="#skills" class="nav-link"><i class="fas fa-code"></i><span>Skills</span></a></li>
+                    <li><a href="#projects" class="nav-link"><i class="fas fa-briefcase"></i><span>Projects</span></a></li>
+                    <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
+                </ul>
+            </nav>
         </div>
-    </nav>
+        <div class="sidebar-footer">
+            <a href="https://github.com/zak-dev-art" class="sidebar-social" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/zach-ndung-u-24347b2ab/?trk=opento_sprofile_details" class="sidebar-social" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="sidebar-social"><i class="fab fa-twitter"></i></a>
+        </div>
+    </aside>
+
+    <button class="mobile-hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <main class="main-content">
 
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1 class="hero-title">
-                        <span class="typing-text">Hi, I'm Zach</span>
-                    </h1>
+                    <div class="hero-header">
+                        <h1 class="hero-title">
+                            <span class="typing-text">Hi, I'm Zach</span>
+                        </h1>
+                        <div class="open-to-work-badge" id="openToWorkBadge" title="Available for full-time and contract roles — based in Nairobi, Kenya">
+                            <span class="pulse-dot"></span>
+                            <span class="badge-text">Open to Work</span>
+                        </div>
+                    </div>
                     <h2 class="hero-subtitle">Full Stack Developer</h2>
                     <p class="hero-description">
                         Crafting digital experiences with cutting-edge technologies. 
@@ -53,6 +60,9 @@
                     <div class="hero-buttons">
                         <a href="#projects" class="btn btn-primary">View My Work</a>
                         <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                        <a href="./cv.pdf" download class="btn btn-download">
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
                     </div>
                 </div>
                 <div class="hero-image">
@@ -145,9 +155,16 @@
         <div class="container">
             <h2 class="section-title">Featured Projects</h2>
             <div class="projects-grid">
-                <div class="project-card">
+                <div class="project-card" data-project-id="farm-fresh">
                     <div class="project-image">
+                        <img class="project-static" src="https://via.placeholder.com/400x220?text=Farm+Fresh+Preview" alt="Farm Fresh - Static" loading="lazy">
+                        <video class="project-preview" data-src="farm-fresh-preview.mp4" muted playsinline style="display:none;"></video>
+                        <div class="preview-label">Preview</div>
                         <div class="project-overlay">
+                            <div class="project-preview-footer">
+                                <h4>Farm Fresh</h4>
+                                <a href="farm-fresh-case-study.html" class="btn btn-sm" style="font-size: 0.85rem; padding: 10px 20px;">Live Demo</a>
+                            </div>
                             <div class="project-links">
                                 <a href="https://github.com/zak-dev-art" class="project-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
                                 <a href="https://fresh-movers-kenya.vercel.app/" class="project-link" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>
@@ -162,11 +179,19 @@
                             <span>Tailwind CSS</span>
                             <span>FastAPI</span>
                         </div>
+                        <a href="farm-fresh-case-study.html" class="btn btn-case-study">View Case Study</a>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-project-id="moringa-tech">
                     <div class="project-image">
+                        <img class="project-static" src="https://via.placeholder.com/400x220?text=Moringa+Tech+Hub" alt="Moringa Tech Hub - Static" loading="lazy">
+                        <video class="project-preview" data-src="moringa-preview.mp4" muted playsinline style="display:none;"></video>
+                        <div class="preview-label">Preview</div>
                         <div class="project-overlay">
+                            <div class="project-preview-footer">
+                                <h4>Moringa Tech Hub</h4>
+                                <a href="moringa-case-study.html" class="btn btn-sm" style="font-size: 0.85rem; padding: 10px 20px;">Live Demo</a>
+                            </div>
                             <div class="project-links">
                                 <a href="https://github.com/zak-dev-art" class="project-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
                                 <a href="https://moringa-tech-hub-kappa.vercel.app/" class="project-link" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>
@@ -182,6 +207,7 @@
                             <span>Tailwind CSS</span>
                             <span>FastAPI</span>
                         </div>
+                        <a href="moringa-case-study.html" class="btn btn-case-study">View Case Study</a>
                     </div>
                 </div>
             </div>
@@ -226,6 +252,7 @@
             <p>&copy; 2024 Zach. All rights reserved.</p>
         </div>
     </footer>
+    </main>
 
     <script src="script.js"></script>
 </body>

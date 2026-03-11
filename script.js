@@ -1,17 +1,127 @@
-// Mobile Navigation
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
+// ============================================
+// CONFIGURATION
+// ============================================
+const OPEN_TO_WORK = true; // Set to false to hide the badge
 
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
+// ============================================
+// OPEN TO WORK BADGE
+// ============================================
+const openToWorkBadge = document.getElementById('openToWorkBadge');
+if (!OPEN_TO_WORK && openToWorkBadge) {
+    openToWorkBadge.style.display = 'none';
+}
+
+// ============================================
+// PROJECT CARD MEDIA PREVIEW & LAZY LOADING
+// ============================================
+const projectCards = document.querySelectorAll('.project-card');
+let isMobile = window.innerWidth <= 768;
+
+window.addEventListener('resize', () => {
+    isMobile = window.innerWidth <= 768;
 });
 
-// Close mobile menu when clicking on a link
-document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    navMenu.classList.remove('active');
-}));
+projectCards.forEach(card => {
+    const projectImage = card.querySelector('.project-image');
+    const video = card.querySelector('.project-preview');
+    const staticImg = card.querySelector('.project-static');
+    let isPlaying = false;
+
+    if (!video) return; // Skip if no video element
+
+    // Lazy load video when card is visible
+    const imageObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !video.src) {
+                const dataSrc = video.getAttribute('data-src');
+                if (dataSrc) {
+                    video.src = dataSrc;
+                }
+            }
+        });
+    }, { threshold: 0.1 });
+
+    imageObserver.observe(projectImage);
+
+    // Desktop: hover to play, mouse leave to stop
+    if (!isMobile) {
+        projectImage.addEventListener('mouseenter', () => {
+            if (video && video.src && !isPlaying) {
+                staticImg.style.opacity = '0';
+                video.style.display = 'block';
+                video.style.opacity = '1';
+                video.play().catch(e => console.log('Video play failed:', e));
+                isPlaying = true;
+            }
+        });
+
+        projectImage.addEventListener('mouseleave', () => {
+            if (video && isPlaying) {
+                video.pause();
+                video.currentTime = 0;
+                video.style.opacity = '0';
+                setTimeout(() => {
+                    video.style.display = 'none';
+                    staticImg.style.opacity = '1';
+                    isPlaying = false;
+                }, 300);
+            }
+        });
+    }
+
+    // Mobile: tap to toggle
+    if (isMobile) {
+        projectImage.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (video && video.src) {
+                if (!isPlaying) {
+                    staticImg.style.opacity = '0';
+                    video.style.display = 'block';
+                    video.style.opacity = '1';
+                    video.play().catch(e => console.log('Video play failed:', e));
+                    isPlaying = true;
+                } else {
+                    video.pause();
+                    video.currentTime = 0;
+                    video.style.opacity = '0';
+                    setTimeout(() => {
+                        video.style.display = 'none';
+                        staticImg.style.opacity = '1';
+                        isPlaying = false;
+                    }, 300);
+                }
+            }
+        });
+    }
+});
+
+// ============================================
+// MOBILE NAVIGATION
+// ============================================
+const mobileHamburger = document.querySelector('.mobile-hamburger');
+const sidebar = document.querySelector('.sidebar');
+const navLinks = document.querySelectorAll('.nav-link');
+
+mobileHamburger.addEventListener('click', () => {
+    mobileHamburger.classList.toggle('active');
+    sidebar.classList.toggle('active');
+});
+
+// Close sidebar when clicking on a nav link
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        mobileHamburger.classList.remove('active');
+        sidebar.classList.remove('active');
+    });
+});
+
+// Close sidebar when clicking outside
+document.addEventListener('click', (e) => {
+    if (!sidebar.contains(e.target) && !mobileHamburger.contains(e.target)) {
+        mobileHamburger.classList.remove('active');
+        sidebar.classList.remove('active');
+    }
+});
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -29,48 +139,64 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Typing animation for hero title
 const typingText = document.querySelector('.typing-text');
-const text = "Hi, I'm Zach";
-let index = 0;
+if (typingText) {
+    const text = "Hi, I'm Zach";
+    let index = 0;
 
-function typeWriter() {
-    if (index < text.length) {
-        typingText.textContent = text.slice(0, index + 1);
-        index++;
-        setTimeout(typeWriter, 100);
-    } else {
-        setTimeout(() => {
-            typingText.style.borderRight = 'none';
-        }, 1000);
+    function typeWriter() {
+        if (index < text.length) {
+            typingText.textContent = text.slice(0, index + 1);
+            index++;
+            setTimeout(typeWriter, 100);
+        } else {
+            setTimeout(() => {
+                typingText.style.borderRight = 'none';
+            }, 1000);
+        }
     }
+
+    // Add cursor effect
+    typingText.style.borderRight = '3px solid #1DB954';
+    typingText.style.animation = 'blink 1s infinite';
+
+    // Start typing animation when page loads
+    window.addEventListener('load', () => {
+        setTimeout(typeWriter, 1000);
+    });
 }
-
-// Add cursor effect
-typingText.style.borderRight = '3px solid #00ff88';
-typingText.style.animation = 'blink 1s infinite';
-
-// Start typing animation when page loads
-window.addEventListener('load', () => {
-    setTimeout(typeWriter, 1000);
-});
 
 // Add blink animation for cursor
 const style = document.createElement('style');
 style.textContent = `
     @keyframes blink {
-        0%, 50% { border-color: #00ff88; }
+        0%, 50% { border-color: #1DB954; }
         51%, 100% { border-color: transparent; }
     }
 `;
 document.head.appendChild(style);
 
-// Navbar background on scroll
-window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(10, 10, 10, 0.98)';
-    } else {
-        navbar.style.background = 'rgba(10, 10, 10, 0.95)';
-    }
+// Active navigation link on scroll
+const mainContent = document.querySelector('.main-content');
+const sections = document.querySelectorAll('section[id]');
+
+mainContent.addEventListener('scroll', () => {
+    let current = '';
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - mainContent.parentElement.offsetTop;
+        const sectionHeight = section.clientHeight;
+        
+        if (mainContent.scrollTop >= sectionTop - 200) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+            link.classList.add('active');
+        }
+    });
 });
 
 // Intersection Observer for animations
@@ -147,7 +273,6 @@ if (contactForm) {
         e.preventDefault();
         
         // Get form data
-        const formData = new FormData(contactForm);
         const name = contactForm.querySelector('input[type="text"]').value;
         const email = contactForm.querySelector('input[type="email"]').value;
         const message = contactForm.querySelector('textarea').value;
@@ -173,72 +298,14 @@ if (contactForm) {
     });
 }
 
-// Particle effect for hero section (optional enhancement)
-function createParticle() {
-    const particle = document.createElement('div');
-    particle.style.position = 'absolute';
-    particle.style.width = '2px';
-    particle.style.height = '2px';
-    particle.style.background = '#00ff88';
-    particle.style.borderRadius = '50%';
-    particle.style.pointerEvents = 'none';
-    particle.style.opacity = '0.7';
+// Add play button to project cards on hover
+document.querySelectorAll('.project-card').forEach(card => {
+    const overlay = card.querySelector('.project-overlay');
     
-    const hero = document.querySelector('.hero');
-    hero.appendChild(particle);
-    
-    const startX = Math.random() * window.innerWidth;
-    const startY = window.innerHeight;
-    
-    particle.style.left = startX + 'px';
-    particle.style.top = startY + 'px';
-    
-    const animation = particle.animate([
-        { transform: 'translateY(0px)', opacity: 0.7 },
-        { transform: 'translateY(-100vh)', opacity: 0 }
-    ], {
-        duration: Math.random() * 3000 + 2000,
-        easing: 'linear'
-    });
-    
-    animation.onfinish = () => {
-        particle.remove();
-    };
-}
-
-// Create particles periodically
-setInterval(createParticle, 300);
-
-// Add active state to navigation based on scroll position
-window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    let current = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (scrollY >= (sectionTop - 200)) {
-            current = section.getAttribute('id');
-        }
-    });
-    
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + current) {
-            link.classList.add('active');
-        }
-    });
+    if (overlay && !overlay.querySelector('.play-button')) {
+        const playButton = document.createElement('div');
+        playButton.className = 'play-button';
+        playButton.innerHTML = '<i class="fas fa-play"></i>';
+        overlay.appendChild(playButton);
+    }
 });
-
-// Add CSS for active nav link
-const navStyle = document.createElement('style');
-navStyle.textContent = `
-    .nav-link.active {
-        color: var(--primary-color) !important;
-    }
-    .nav-link.active::after {
-        width: 100% !important;
-    }
-`;
-document.head.appendChild(navStyle);

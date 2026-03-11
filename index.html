@@ -6,76 +6,39 @@
     <title>Zach - Full Stack Developer</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700;1,900&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <aside class="sidebar">
-        <div class="sidebar-content">
-            <div class="sidebar-logo">
-                <div class="logo-circle">Zach</div>
-            </div>
-            <nav class="sidebar-nav">
-                <ul class="nav-menu">
-                    <li><a href="#home" class="nav-link"><i class="fas fa-home"></i><span>Home</span></a></li>
-                    <li><a href="#about" class="nav-link"><i class="fas fa-user"></i><span>About</span></a></li>
-                    <li><a href="#skills" class="nav-link"><i class="fas fa-code"></i><span>Skills</span></a></li>
-                    <li><a href="#projects" class="nav-link"><i class="fas fa-briefcase"></i><span>Projects</span></a></li>
-                    <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
-                </ul>
-            </nav>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Zach.</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+            </ul>
+            <a href="#contact" class="nav-contact-btn">Contact</a>
         </div>
-        <div class="sidebar-footer">
-            <a href="https://github.com/zak-dev-art" class="sidebar-social" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/zach-ndung-u-24347b2ab/?trk=opento_sprofile_details" class="sidebar-social" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-            <a href="#" class="sidebar-social"><i class="fab fa-twitter"></i></a>
-        </div>
-    </aside>
-
-    <button class="mobile-hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-
-    <main class="main-content">
+        <button class="mobile-hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
 
     <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <div class="hero-header">
-                        <h1 class="hero-title">
-                            <span class="typing-text">Hi, I'm Zach</span>
-                        </h1>
-                        <div class="open-to-work-badge" id="openToWorkBadge" title="Available for full-time and contract roles — based in Nairobi, Kenya">
-                            <span class="pulse-dot"></span>
-                            <span class="badge-text">Open to Work</span>
-                        </div>
-                    </div>
-                    <h2 class="hero-subtitle">Full Stack Developer</h2>
-                    <p class="hero-description">
-                        Crafting digital experiences with cutting-edge technologies. 
-                        Passionate about clean code, innovative solutions, and pushing boundaries.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">View My Work</a>
-                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-                        <a href="./cv.pdf" download class="btn btn-download">
-                            <i class="fas fa-download"></i> Download CV
-                        </a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <div class="image-container">
-                        <img src="45606bc1-32b1-4fbd-8a20-4f6b3a2e52c5.jpeg" alt="Zach - Developer" class="profile-img">
-                        <div class="image-overlay"></div>
-                    </div>
-                </div>
-            </div>
+        <div class="hero-greeting">Hey, there</div>
+        <div class="hero-badge">
+            <span class="badge-dot"></span>
+            <span>Available for opportunities</span>
         </div>
-        <div class="scroll-indicator">
-            <div class="scroll-arrow"></div>
+        <div class="hero-specialization">Full Stack Development<br>UI/UX Design</div>
+        <div class="hero-image-wrapper">
+            <img src="45606bc1-32b1-4fbd-8a20-4f6b3a2e52c5.jpeg" alt="Zach - Developer" class="hero-profile-img">
         </div>
+        <div class="hero-name">I AM<br>ZACH</div>
+        <div class="hero-title-block">FULL STACK<br>SOFTWARE<br>DEVELOPER</div>
     </section>
 
     <section id="about" class="about">
@@ -153,53 +116,36 @@
 
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
+            <h2 class="section-title">RECENT PROJECTS</h2>
             <div class="projects-grid">
-                <div class="project-card" data-project-id="farm-fresh">
-                    <div class="project-image">
-                        <img class="project-static" src="https://via.placeholder.com/400x220?text=Farm+Fresh+Preview" alt="Farm Fresh - Static" loading="lazy">
-                        <video class="project-preview" data-src="farm-fresh-preview.mp4" muted playsinline style="display:none;"></video>
-                        <div class="preview-label">Preview</div>
+                <div class="project-card">
+                    <div class="project-image-container">
+                        <img src="https://via.placeholder.com/600x400/FFF8E7/333333?text=Farm+Fresh" alt="Farm Fresh" class="project-img">
                         <div class="project-overlay">
-                            <div class="project-preview-footer">
-                                <h4>Farm Fresh</h4>
-                                <a href="farm-fresh-case-study.html" class="btn btn-sm" style="font-size: 0.85rem; padding: 10px 20px;">Live Demo</a>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/zak-dev-art" class="project-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-                                <a href="https://fresh-movers-kenya.vercel.app/" class="project-link" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>
-                            </div>
+                            <h3 class="project-name">FARM FRESH</h3>
                         </div>
                     </div>
-                    <div class="project-content">
-                        <h3>FARM FRESH</h3>
+                    <div class="project-info">
                         <p>A web platform for moving services in Kenya, helping users easily book and manage moves.</p>
                         <div class="project-tech">
                             <span>React</span>
                             <span>Tailwind CSS</span>
                             <span>FastAPI</span>
                         </div>
-                        <a href="farm-fresh-case-study.html" class="btn btn-case-study">View Case Study</a>
-                    </div>
-                </div>
-                <div class="project-card" data-project-id="moringa-tech">
-                    <div class="project-image">
-                        <img class="project-static" src="https://via.placeholder.com/400x220?text=Moringa+Tech+Hub" alt="Moringa Tech Hub - Static" loading="lazy">
-                        <video class="project-preview" data-src="moringa-preview.mp4" muted playsinline style="display:none;"></video>
-                        <div class="preview-label">Preview</div>
-                        <div class="project-overlay">
-                            <div class="project-preview-footer">
-                                <h4>Moringa Tech Hub</h4>
-                                <a href="moringa-case-study.html" class="btn btn-sm" style="font-size: 0.85rem; padding: 10px 20px;">Live Demo</a>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/zak-dev-art" class="project-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-                                <a href="https://moringa-tech-hub-kappa.vercel.app/" class="project-link" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>
-                            </div>
+                        <div class="project-links">
+                            <a href="https://github.com/zak-dev-art" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                            <a href="https://fresh-movers-kenya.vercel.app/" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
-                    <div class="project-content">
-                        <h3>MORINGA TECH HUB</h3>
+                </div>
+                <div class="project-card">
+                    <div class="project-image-container">
+                        <img src="https://via.placeholder.com/600x400/FFF8E7/333333?text=Moringa+Tech+Hub" alt="Moringa Tech Hub" class="project-img">
+                        <div class="project-overlay">
+                            <h3 class="project-name">MORINGA TECH HUB</h3>
+                        </div>
+                    </div>
+                    <div class="project-info">
                         <p>A modern platform where students can get verified information, advice, and inspiration about the tech space.</p>
                         <div class="project-tech">
                             <span>React</span>
@@ -207,7 +153,10 @@
                             <span>Tailwind CSS</span>
                             <span>FastAPI</span>
                         </div>
-                        <a href="moringa-case-study.html" class="btn btn-case-study">View Case Study</a>
+                        <div class="project-links">
+                            <a href="https://github.com/zak-dev-art" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                            <a href="https://moringa-tech-hub-kappa.vercel.app/" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -252,7 +201,6 @@
             <p>&copy; 2024 Zach. All rights reserved.</p>
         </div>
     </footer>
-    </main>
 
     <script src="script.js"></script>
 </body>

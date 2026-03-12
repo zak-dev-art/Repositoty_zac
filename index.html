@@ -3,205 +3,644 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zach - Full Stack Developer</title>
+    <title>Zach Ndung'u - Full Stack Developer & AI Builder</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700;1,900&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
 </head>
 <body>
+    <!-- ============================================
+         NAVBAR
+         ============================================ -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-logo">Zach.</div>
+            <a href="#home" class="nav-logo">
+                Z<span class="logo-tech">.tech</span>
+            </a>
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#blog" class="nav-link">Blog</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <a href="#contact" class="nav-contact-btn">Contact</a>
+            <a href="cv.pdf" download class="nav-cv-btn">Download CV</a>
+            <button class="mobile-hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-        <button class="mobile-hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
     </nav>
 
+    <!-- ============================================
+         HERO SECTION
+         ============================================ -->
     <section id="home" class="hero">
-        <div class="hero-greeting">Hey, there</div>
-        <div class="hero-badge">
-            <span class="badge-dot"></span>
-            <span>Available for opportunities</span>
+        <div class="hero-container">
+            <div class="hero-left">
+                <!-- Available badge -->
+                <div class="hero-badge">
+                    <span class="badge-glow"></span>
+                    <span class="badge-text">👋 Available for opportunities</span>
+                </div>
+
+                <!-- Main heading -->
+                <h1 class="hero-heading">I BUILD THINGS FOR THE WEB</h1>
+
+                <!-- Typewriter effect -->
+                <div class="hero-typewriter">
+                    <p>I'm a <span class="typewriter-text">Full Stack Developer</span></p>
+                </div>
+
+                <!-- Bio -->
+                <p class="hero-bio">BSc Business Information Technology · Moringa School Graduate · Based in Nairobi, Kenya</p>
+
+                <!-- CTA Buttons -->
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-gradient">View My Work</a>
+                    <a href="#contact" class="btn btn-ghost">Let's Talk</a>
+                </div>
+
+                <!-- Stats -->
+                <div class="hero-stats">
+                    <div class="stat-pill">
+                        <span class="stat-icon">🚀</span>
+                        <span>3 Deployed Projects</span>
+                    </div>
+                    <div class="stat-pill">
+                        <span class="stat-icon">⭐</span>
+                        <span>2+ Years Experience</span>
+                    </div>
+                    <div class="stat-pill">
+                        <span class="stat-icon">💡</span>
+                        <span>Open Source Contributor</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Right Column - Profile Photo -->
+            <div class="hero-right">
+                <div class="hero-image-wrapper">
+                    <img src="45606bc1-32b1-4fbd-8a20-4f6b3a2e52c5.jpeg" alt="Zach Ndung'u - Developer" class="hero-profile-img">
+                </div>
+            </div>
         </div>
-        <div class="hero-specialization">Full Stack Development<br>UI/UX Design</div>
-        <div class="hero-image-wrapper">
-            <img src="45606bc1-32b1-4fbd-8a20-4f6b3a2e52c5.jpeg" alt="Zach - Developer" class="hero-profile-img">
-        </div>
-        <div class="hero-name">I AM<br>ZACH</div>
-        <div class="hero-title-block">FULL STACK<br>SOFTWARE<br>DEVELOPER</div>
+
+        <!-- Animated gradient mesh background -->
+        <div class="hero-gradient-mesh"></div>
     </section>
 
+    <!-- ============================================
+         ABOUT SECTION
+         ============================================ -->
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I'm a passionate full-stack developer with expertise in modern web technologies. I love creating efficient, scalable solutions that solve real-world problems.</p>
-                    <div class="stats">
-                        <div class="stat">
-                            <span class="stat-number">3+</span>
-                            <span class="stat-label">Years Experience</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">50+</span>
-                            <span class="stat-label">Projects Completed</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">100%</span>
-                            <span class="stat-label">Client Satisfaction</span>
-                        </div>
+            <div class="about-container">
+                <!-- Left column - Quote -->
+                <div class="about-left">
+                    <div class="about-quote-card">
+                        <div class="quote-icon">"</div>
+                        <p class="quote-text">I once spent an entire weekend debugging a single line of code… and learned patience.</p>
+                    </div>
+                </div>
+
+                <!-- Right column - Content -->
+                <div class="about-right">
+                    <p class="about-text">
+                        I'm <strong>Zach Ndung'u</strong>, a Full Stack Software Developer based in Nairobi, Kenya. I hold a Bachelor of Business Information Technology from Kirinyaga University and completed an intensive Software Development Program at Moringa School, where I built real-world applications from the ground up. I'm passionate about creating practical technology solutions that solve genuine problems — from AI-powered productivity tools to logistics platforms serving the Kenyan market. I bring a rare combination of technical development skills, financial analysis experience from my time as a Loan Officer at JAZA Capital, and commercial instincts developed in sales. When I'm not coding, I'm exploring new tools, contributing to open source, or watching football.
+                    </p>
+
+                    <!-- Currently building -->
+                    <div class="currently-building">
+                        <div class="building-dot"></div>
+                        <span>Currently building: <strong>E-commerce website for beauty products</strong></span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ============================================
+         SKILLS SECTION
+         ============================================ -->
     <section id="skills" class="skills">
         <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
+            <h2 class="section-heading">TECH STACK</h2>
+            <div class="heading-underline"></div>
+
             <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Frontend</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">React</span>
-                        <span class="skill-item">Vue.js</span>
-                        <span class="skill-item">TypeScript</span>
-                        <span class="skill-item">Next.js</span>
-                        <span class="skill-item">Tailwind CSS</span>
+                <!-- Languages -->
+                <div class="skill-card">
+                    <h3 class="skill-title">Languages</h3>
+                    <div class="skill-badges">
+                        <span class="skill-badge">
+                            <i class="devicon-html5-plain"></i>
+                            <span>HTML</span>
+                        </span>
+                        <span class="skill-badge">
+                            <i class="devicon-css3-plain"></i>
+                            <span>CSS</span>
+                        </span>
+                        <span class="skill-badge">
+                            <i class="devicon-javascript-plain"></i>
+                            <span>JavaScript</span>
+                        </span>
+                        <span class="skill-badge">
+                            <i class="devicon-python-plain"></i>
+                            <span>Python</span>
+                        </span>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3>Backend</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">Node.js</span>
-                        <span class="skill-item">Python</span>
-                        <span class="skill-item">Express</span>
-                        <span class="skill-item">Django</span>
-                        <span class="skill-item">GraphQL</span>
+
+                <!-- Frameworks & Libraries -->
+                <div class="skill-card">
+                    <h3 class="skill-title">Frameworks & Libraries</h3>
+                    <div class="skill-badges">
+                        <span class="skill-badge">
+                            <i class="devicon-react-plain"></i>
+                            <span>React</span>
+                        </span>
+                        <span class="skill-badge">
+                            <!-- Tailwind CSS doesn't have a clear devicon, using text badge -->
+                            <span class="devicon-text">🎨</span>
+                            <span>Tailwind CSS</span>
+                        </span>
+                        <span class="skill-badge">
+                            <span class="devicon-text">⚡</span>
+                            <span>FastAPI</span>
+                        </span>
+                        <span class="skill-badge">
+                            <span class="devicon-text">🔱</span>
+                            <span>Redux Toolkit</span>
+                        </span>
+                        <span class="skill-badge">
+                            <i class="devicon-flask-plain"></i>
+                            <span>Flask</span>
+                        </span>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3>Database & Cloud</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">MongoDB</span>
-                        <span class="skill-item">PostgreSQL</span>
-                        <span class="skill-item">AWS</span>
-                        <span class="skill-item">Docker</span>
-                        <span class="skill-item">Redis</span>
+
+                <!-- Tools & Platforms -->
+                <div class="skill-card">
+                    <h3 class="skill-title">Tools & Platforms</h3>
+                    <div class="skill-badges">
+                        <span class="skill-badge">
+                            <i class="devicon-git-plain"></i>
+                            <span>Git</span>
+                        </span>
+                        <span class="skill-badge">
+                            <i class="devicon-github-plain"></i>
+                            <span>GitHub</span>
+                        </span>
+                        <span class="skill-badge">
+                            <i class="devicon-vscode-plain"></i>
+                            <span>VS Code</span>
+                        </span>
+                        <span class="skill-badge">
+                            <span class="devicon-text">📨</span>
+                            <span>Postman</span>
+                        </span>
+                        <span class="skill-badge">
+                            <i class="devicon-vercel-plain"></i>
+                            <span>Vercel</span>
+                        </span>
+                        <span class="skill-badge">
+                            <span class="devicon-text">🔗</span>
+                            <span>Airtable</span>
+                        </span>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3>Tools & Others</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">Git</span>
-                        <span class="skill-item">Webpack</span>
-                        <span class="skill-item">Jest</span>
-                        <span class="skill-item">Figma</span>
-                        <span class="skill-item">Agile</span>
+
+                <!-- Currently Learning -->
+                <div class="skill-card">
+                    <h3 class="skill-title">Currently Learning</h3>
+                    <div class="skill-badges">
+                        <span class="skill-badge">
+                            <span class="devicon-text">🚀</span>
+                            <span>HP</span>
+                        </span>
+                        <span class="skill-badge-text">Always expanding...</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ============================================
+         FEATURED PROJECTS SECTION
+         ============================================ -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">RECENT PROJECTS</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image-container">
-                        <img src="https://via.placeholder.com/600x400/FFF8E7/333333?text=Farm+Fresh" alt="Farm Fresh" class="project-img">
-                        <div class="project-overlay">
-                            <h3 class="project-name">FARM FRESH</h3>
-                        </div>
+            <h2 class="section-heading">FEATURED PROJECTS</h2>
+            <div class="heading-underline"></div>
+
+            <!-- Project 1: Fresh Movers -->
+            <article class="project-card">
+                <div class="project-content">
+                    <div class="project-header">
+                        <span class="project-tag">Logistics · Full Stack</span>
+                        <h3 class="project-title">Fresh Movers</h3>
                     </div>
-                    <div class="project-info">
-                        <p>A web platform for moving services in Kenya, helping users easily book and manage moves.</p>
-                        <div class="project-tech">
-                            <span>React</span>
-                            <span>Tailwind CSS</span>
-                            <span>FastAPI</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/zak-dev-art" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-                            <a href="https://fresh-movers-kenya.vercel.app/" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
+                    <p class="project-description">
+                        A full-stack web platform simplifying the moving experience in Kenya. Users can browse verified movers, get instant quotes, book appointments, and track their move in real time. Built with a React frontend, Tailwind CSS for responsive styling, and a FastAPI backend handling bookings, user authentication, and mover listings — all deployed on Vercel.
+                    </p>
+                    <div class="project-problem">
+                        <subtitle class="problem-label">Problem solved:</subtitle>
+                        <p>"Moving in Kenya was fragmented and unreliable — no central platform to find, compare, and book trusted movers."</p>
                     </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image-container">
-                        <img src="https://via.placeholder.com/600x400/FFF8E7/333333?text=Moringa+Tech+Hub" alt="Moringa Tech Hub" class="project-img">
-                        <div class="project-overlay">
-                            <h3 class="project-name">MORINGA TECH HUB</h3>
-                        </div>
+                    <div class="project-tech-badges">
+                        <span class="tech-badge">React</span>
+                        <span class="tech-badge">Tailwind CSS</span>
+                        <span class="tech-badge">FastAPI</span>
+                        <span class="tech-badge">Vercel</span>
                     </div>
-                    <div class="project-info">
-                        <p>A modern platform where students can get verified information, advice, and inspiration about the tech space.</p>
-                        <div class="project-tech">
-                            <span>React</span>
-                            <span>Redux Toolkit</span>
-                            <span>Tailwind CSS</span>
-                            <span>FastAPI</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/zak-dev-art" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-                            <a href="https://moringa-tech-hub-kappa.vercel.app/" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
+                    <div class="project-links">
+                        <a href="https://fresh-movers-kenya.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">
+                            Live Demo <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="https://github.com/zak-dev-art/Fresh-movers-kenya" target="_blank" rel="noopener noreferrer" class="project-link">
+                            GitHub <i class="fas fa-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
+            </article>
+
+            <!-- Project 2: Moringa Tech Hub -->
+            <article class="project-card project-card-reverse">
+                <div class="project-content">
+                    <div class="project-header">
+                        <span class="project-tag">Community · Education · Full Stack</span>
+                        <h3 class="project-title">Moringa Tech Hub</h3>
+                    </div>
+                    <p class="project-description">
+                        A modern knowledge-sharing platform giving Moringa School students access to verified insights, career advice, and real experiences from alumni, staff, and industry professionals. Features content categorisation by topic, format, and career level, a community contribution system for verified members, and a clean, fast React frontend powered by Redux Toolkit and a FastAPI backend.
+                    </p>
+                    <div class="project-problem">
+                        <subtitle class="problem-label">Problem solved:</subtitle>
+                        <p>"Students lacked a single trusted source for authentic, practical information about navigating the tech industry."</p>
+                    </div>
+                    <div class="project-tech-badges">
+                        <span class="tech-badge">React</span>
+                        <span class="tech-badge">Redux Toolkit</span>
+                        <span class="tech-badge">Tailwind CSS</span>
+                        <span class="tech-badge">FastAPI</span>
+                        <span class="tech-badge">Vercel</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://moringa-tech-hub-kappa.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">
+                            Live Demo <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="https://github.com/danielkamweru/Moringa-TechHub" target="_blank" rel="noopener noreferrer" class="project-link">
+                            GitHub <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 3: Meridian Task Planner (Featured) -->
+            <article class="project-card project-featured">
+                <div class="featured-badge">⭐ Featured</div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <span class="project-tag">AI · Productivity · Full Stack</span>
+                        <h3 class="project-title">Meridian Task Planner</h3>
+                    </div>
+                    <p class="project-description">
+                        An AI-powered daily planning application that bridges the gap between long-term ambition and daily execution. Users set yearly goals, break them into time-stamped daily tasks, and track progress in real time through a live dashboard with progress metrics and visual goal indicators. At the heart of Meridian is an AI coaching interface powered by Claude — it has full context of the user's goals and schedule, providing personalised planning advice, smart prioritisation suggestions, and daily accountability check-ins. Every task is linked directly to a parent goal, so nothing exists in isolation.
+                    </p>
+                    <div class="project-problem">
+                        <subtitle class="problem-label">Problem solved:</subtitle>
+                        <p>"Most productivity tools manage tasks but ignore the bigger picture. Meridian connects daily actions to long-term ambitions so users always know why they're doing what they're doing."</p>
+                    </div>
+                    <div class="project-features">
+                        <subtitle class="features-label">Key Features:</subtitle>
+                        <div class="features-list">
+                            <span class="feature-item">Live Dashboard</span>
+                            <span class="feature-item">Goal Tracker</span>
+                            <span class="feature-item">AI Coaching</span>
+                            <span class="feature-item">Daily Accountability</span>
+                            <span class="feature-item">Progress Metrics</span>
+                        </div>
+                    </div>
+                    <div class="project-tech-badges">
+                        <span class="tech-badge">React</span>
+                        <span class="tech-badge">Claude AI</span>
+                        <span class="tech-badge">Vercel</span>
+                        <span class="tech-badge">JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://meridian-gl6m.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">
+                            Live Demo <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="https://github.com/zak-dev-art/Meridian" target="_blank" rel="noopener noreferrer" class="project-link">
+                            GitHub <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- View all on GitHub -->
+            <div class="projects-footer">
+                <a href="https://github.com/zak-dev-art" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">View All on GitHub</a>
             </div>
         </div>
     </section>
 
+    <!-- ============================================
+         METRICS DASHBOARD
+         ============================================ -->
+    <section id="metrics" class="metrics">
+        <div class="container">
+            <h2 class="section-heading">BY THE NUMBERS</h2>
+            <div class="heading-underline"></div>
+
+            <div class="metrics-grid">
+                <!-- Stat Cards -->
+                <div class="metric-card">
+                    <div class="metric-value">3</div>
+                    <div class="metric-label">Deployed Projects</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">95+</div>
+                    <div class="metric-label">Lighthouse Score</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">Active</div>
+                    <div class="metric-label">Open Source</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">🇰🇪</div>
+                    <div class="metric-label">Nairobi, Kenya</div>
+                </div>
+            </div>
+
+            <!-- GitHub Stats Card -->
+            <div class="github-stats">
+                <img src="https://github-readme-stats.vercel.app/api?username=zak-dev-art&show_icons=true&theme=tokyonight&bg_color=0a0a0f&border_color=6c63ff&text_color=ffffff&title_color=6c63ff" alt="GitHub Stats" class="github-stats-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         BLOG SECTION
+         ============================================ -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <h2 class="section-heading">TECHNICAL INSIGHTS</h2>
+            <p class="blog-subheading">Real lessons from real projects — no fluff, just what I learned building things.</p>
+
+            <div class="blog-grid">
+                <!-- Blog Post 1 -->
+                <article class="blog-card">
+                    <div class="blog-header">
+                        <h3 class="blog-title">Why I Chose FastAPI Over Django REST Framework — And What I Learned</h3>
+                        <div class="blog-meta">
+                            <span class="blog-date">February 2026</span>
+                            <span class="blog-divider">·</span>
+                            <span class="blog-time">6 min read</span>
+                        </div>
+                        <div class="blog-tags">
+                            <span class="blog-tag">Python</span>
+                            <span class="blog-tag">Backend</span>
+                            <span class="blog-tag">API Design</span>
+                        </div>
+                    </div>
+                    <p class="blog-excerpt">
+                        When I started building the backend for Fresh Movers, I had to make a decision that would define the entire project's performance and developer experience — FastAPI or Django REST Framework. Here's exactly why I went with FastAPI and what it taught me.
+                    </p>
+                    <button class="blog-toggle" data-post="1">Read More</button>
+
+                    <!-- Blog Post Full Content (Expandable) -->
+                    <div class="blog-content" id="blog-content-1">
+                        <h4>The Problem I Was Solving</h4>
+                        <p>Fresh Movers needed a backend that could handle booking requests, user authentication, mover listings, and real-time availability checks — all with fast response times and clean API documentation that my React frontend could consume easily.</p>
+
+                        <h4>Why FastAPI Won</h4>
+                        <p>The first thing that caught my attention was automatic interactive API documentation. FastAPI generates Swagger UI out of the box at /docs — meaning every endpoint I wrote was instantly testable without leaving my browser. When you're building and iterating quickly, this is a genuine superpower.</p>
+                        <p>The second reason was performance. FastAPI is built on Starlette and uses Python's async/await natively, making it one of the fastest Python web frameworks available — comparable to Node.js in benchmarks. For an application where multiple users might be checking mover availability simultaneously, async request handling matters.</p>
+                        <p>Third: type hints. FastAPI uses Python's type annotation system with Pydantic models for request and response validation. This means if a request comes in with the wrong data type, FastAPI rejects it automatically before it ever touches my business logic. Coming from a background where I'd manually validate inputs, this felt like having a safety net on every endpoint.</p>
+
+                        <h4>What Django REST Would Have Given Me</h4>
+                        <p>DRF has a mature ecosystem, an admin panel out of the box, and battle-tested ORM integration. For a project with complex relational database requirements and a large team, DRF makes sense. But for a lean, performance-focused API being built solo with speed as a priority, it felt like putting on a suit to go jogging.</p>
+
+                        <h4>The Tradeoff I Accepted</h4>
+                        <p>FastAPI's ecosystem is newer. I hit moments where a Django package I'd heard about simply didn't have a FastAPI equivalent, and I had to build the solution myself. That was frustrating in the short term but genuinely educational.</p>
+
+                        <h4>What I'd Tell Other Developers</h4>
+                        <p>If you're building a new API from scratch, value performance and documentation, and are comfortable with Python type hints — start with FastAPI. If you're building something with complex admin requirements or joining a large team with existing Django expertise — go DRF. The best framework is the one that fits the specific problem in front of you.</p>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="blog-card">
+                    <div class="blog-header">
+                        <h3 class="blog-title">Building an AI-Powered App with Claude API — What Nobody Tells You</h3>
+                        <div class="blog-meta">
+                            <span class="blog-date">March 2026</span>
+                            <span class="blog-divider">·</span>
+                            <span class="blog-time">8 min read</span>
+                        </div>
+                        <div class="blog-tags">
+                            <span class="blog-tag">AI</span>
+                            <span class="blog-tag">Claude</span>
+                            <span class="blog-tag">React</span>
+                            <span class="blog-tag">Product Design</span>
+                        </div>
+                    </div>
+                    <p class="blog-excerpt">
+                        Meridian started as a simple task manager. Then I integrated Claude AI, and everything changed — the product, the architecture, and how I think about building software. Here's an honest account of what went well and what nearly broke me.
+                    </p>
+                    <button class="blog-toggle" data-post="2">Read More</button>
+
+                    <!-- Blog Post Full Content (Expandable) -->
+                    <div class="blog-content" id="blog-content-2">
+                        <h4>The Original Idea</h4>
+                        <p>Meridian was supposed to be a straightforward productivity app — set goals, create tasks, track progress. Clean, simple, useful. The AI integration was almost an afterthought. Then I started thinking: what if the app didn't just track what you were doing, but actually understood why you were doing it?</p>
+
+                        <h4>Choosing Claude Over GPT</h4>
+                        <p>I evaluated both OpenAI's GPT-4 and Anthropic's Claude for the coaching interface. The decision came down to one thing: context handling. Meridian needed an AI that could hold the full context of a user's yearly goals, their daily task list, their completion rate, and their current blockers — and then give advice that felt genuinely personalised, not generic.</p>
+                        <p>Claude handled longer context windows more gracefully in my testing, and the responses felt more thoughtful and less robotic. For a coaching interface where tone matters as much as accuracy, this was the deciding factor.</p>
+
+                        <h4>The Architecture Challenge</h4>
+                        <p>The hardest part wasn't calling the API — that's just a fetch request. The hard part was deciding what context to send. Sending everything on every request would be expensive and slow. Sending too little would make the AI's advice feel disconnected from reality.</p>
+                        <p>I settled on a structured context object that included: the user's top 3 active goals with completion percentages, today's task list with statuses, the last 3 days of completion data, and any tasks the user had flagged as blocked. This gave Claude enough to be genuinely useful without bloating every request.</p>
+
+                        <h4>What Surprised Me</h4>
+                        <p>The AI responses were sometimes too good. Users in testing started treating Meridian's AI coach as a source of truth for life decisions. I had to add a subtle disclaimer and think carefully about the prompts I was sending — because the framing of your system prompt shapes the entire personality and boundaries of the AI's responses. Prompt engineering is a real skill and it took me several iterations to get it right.</p>
+
+                        <h4>The Performance Problem</h4>
+                        <p>AI API calls are slow compared to a database query. On first load, waiting 2–3 seconds for the coaching panel to populate felt jarring. I solved this with a skeleton loading state and by pre-fetching the AI response in the background when the user logs in, so by the time they navigate to the coaching tab, the response is already there.</p>
+
+                        <h4>What I'd Do Differently</h4>
+                        <p>I'd design the AI integration from day one rather than bolting it on. The data model I built for goals and tasks was retrofitted to feed the AI context object, which led to some awkward data transformations. Building with the AI in mind from the start would have produced cleaner architecture.</p>
+
+                        <h4>The Lesson</h4>
+                        <p>AI doesn't make your product smart. It makes your product feel human. The intelligence comes from how you structure the problem, what context you provide, and how carefully you craft the experience around the AI's output. The API call is 5% of the work.</p>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article class="blog-card">
+                    <div class="blog-header">
+                        <h3 class="blog-title">React + Tailwind CSS: Why This Is My Go-To Stack in 2026</h3>
+                        <div class="blog-meta">
+                            <span class="blog-date">January 2026</span>
+                            <span class="blog-divider">·</span>
+                            <span class="blog-time">5 min read</span>
+                        </div>
+                        <div class="blog-tags">
+                            <span class="blog-tag">React</span>
+                            <span class="blog-tag">Tailwind CSS</span>
+                            <span class="blog-tag">Frontend</span>
+                            <span class="blog-tag">Developer Experience</span>
+                        </div>
+                    </div>
+                    <p class="blog-excerpt">
+                        I've used plain CSS, Bootstrap, styled-components, and Material UI. I keep coming back to React with Tailwind. Here's an honest breakdown of why — including the parts that frustrated me before I understood them.
+                    </p>
+                    <button class="blog-toggle" data-post="3">Read More</button>
+
+                    <!-- Blog Post Full Content (Expandable) -->
+                    <div class="blog-content" id="blog-content-3">
+                        <h4>How I Got Here</h4>
+                        <p>My first React project used plain CSS modules. Organised, but slow. My second used Bootstrap — fast to start, painful to customise. My third used styled-components — powerful, but the context switching between JavaScript logic and style definitions started to feel like mental overhead. Then I tried Tailwind on the Moringa Tech Hub project and something clicked.</p>
+
+                        <h4>What Tailwind Actually Is</h4>
+                        <p>Tailwind is not a component library. It doesn't give you pre-built buttons or navbars. It gives you utility classes — small, single-purpose CSS building blocks that you compose directly in your HTML. Instead of writing a CSS class called .card with ten properties, you write those ten properties inline as class names. It sounds messy. In practice, on a React project, it's the opposite.</p>
+
+                        <h4>Why It Works With React Specifically</h4>
+                        <p>React already encourages you to think in components. When your styling lives in the same file as your component logic, you stop jumping between files to understand what something looks like. The entire mental model of a Button component — its layout, colour, hover state, responsive behaviour — lives in one place. That's genuinely faster to read, write, and debug.</p>
+
+                        <h4>The Parts That Frustrated Me First</h4>
+                        <p>The class names are verbose. A fully styled card in Tailwind looks like a wall of text in the className attribute. I solved this with the clsx library for conditional classes and by extracting repeated patterns into reusable React components rather than Tailwind @apply directives.</p>
+                        <p>The second frustration was purging. In production, Tailwind removes any CSS class you didn't use — which is great for performance but caused me one memorable bug where dynamically generated class names were being purged because Tailwind's scanner couldn't detect them. The fix is to always write complete class names, never construct them with string concatenation.</p>
+
+                        <h4>The Performance Win</h4>
+                        <p>Tailwind's production CSS bundle is tiny — typically under 10kb for a full application because unused styles are stripped out. Compare this to Bootstrap's 30kb+ minified CSS included whether you use it or not. For Lighthouse scores and Core Web Vitals, this matters.</p>
+
+                        <h4>When I'd Choose Something Else</h4>
+                        <p>If I were building a large design system with dozens of developers and strict brand consistency requirements, I'd reach for a component library like Shadcn/UI built on top of Tailwind — which gives you the utility system plus pre-built accessible components. For solo projects and small teams, vanilla React plus Tailwind remains my fastest path from idea to deployed product.</p>
+
+                        <h4>The Bottom Line</h4>
+                        <p>React gives you composable UI logic. Tailwind gives you composable styling. Together they reduce the number of files, the number of decisions, and the amount of context switching required to build a good-looking, performant frontend. In 2026, with the tooling maturity both ecosystems have reached, this combination is genuinely hard to beat for a full stack JavaScript developer.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CONTACT SECTION
+         ============================================ -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Let's Work Together</h2>
-            <div class="contact-content">
+            <h2 class="section-heading">LET'S BUILD SOMETHING</h2>
+            <p class="contact-subheading">Open to full-time roles, contract work, and interesting collaborations. Based in Nairobi — available remotely worldwide.</p>
+
+            <div class="contact-container">
+                <!-- Contact Info -->
                 <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>zachndungu861@gmail.com</span>
+                    <div class="contact-card">
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <a href="mailto:zachndungu861@gmail.com">zachndungu861@gmail.com</a>
+                        </div>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>+254 795536961</span>
+                    <div class="contact-card">
+                        <div class="contact-icon">💼</div>
+                        <div class="contact-details">
+                            <h4>LinkedIn</h4>
+                            <a href="https://www.linkedin.com/in/zach-ndung-u-24347b2ab" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+                        </div>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Nairobi</span>
+                    <div class="contact-card">
+                        <div class="contact-icon">🌐</div>
+                        <div class="contact-details">
+                            <h4>Portfolio</h4>
+                            <a href="https://portfolio-zac.vercel.app/" target="_blank" rel="noopener noreferrer">portfolio-zac.vercel.app</a>
+                        </div>
                     </div>
-                    <div class="social-links">
-                        <a href="https://github.com/zak-dev-art" class="social-link"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/zach-ndung-u-24347b2ab/?trk=opento_sprofile_details" class="social-link"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <div class="contact-card">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>Nairobi, Kenya 🇰🇪</p>
+                        </div>
                     </div>
                 </div>
-                <form class="contact-form" action="mailto:zachndungu861@gmail.com" method="post" enctype="text/plain">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
+
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper">
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-gradient">Send Message</button>
+                        <!-- EmailJS Configuration: Replace these with your actual EmailJS credentials -->
+                        <!-- Service ID: service_XXXXXXXXX -->
+                        <!-- Template ID: template_XXXXXXXXX -->
+                        <!-- Public Key: XXXXXXXXX -->
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Zach. All rights reserved.</p>
+            <div class="footer-content">
+                <a href="#home" class="footer-logo">
+                    Z<span class="logo-tech">.tech</span>
+                </a>
+                <nav class="footer-nav">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#blog">Blog</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+                <div class="footer-socials">
+                    <a href="https://github.com/zak-dev-art" target="_blank" rel="noopener noreferrer" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/zach-ndung-u-24347b2ab" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:zachndungu861@gmail.com" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Zach Ndung'u — Designed & Built in Nairobi, Kenya 🇰🇪</p>
+            </div>
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" title="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.emailjs.com/sdk/2.11.0/email.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

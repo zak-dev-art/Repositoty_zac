@@ -1,5 +1,5 @@
 // ============================================
-// NAVBAR SCROLL EFFECT
+// NAVBAR SCROLL EFFECT & BORDER GLOW
 // ============================================
 const navbar = document.querySelector('.navbar');
 
@@ -12,7 +12,7 @@ window.addEventListener('scroll', () => {
 });
 
 // ============================================
-// MOBILE NAVIGATION
+// MOBILE NAVIGATION HAMBURGER MENU
 // ============================================
 const mobileHamburger = document.querySelector('.mobile-hamburger');
 const navMenu = document.querySelector('.nav-menu');
@@ -39,7 +39,7 @@ document.addEventListener('click', (e) => {
 });
 
 // ============================================
-// SMOOTH SCROLLING
+// SMOOTH SCROLLING FOR ANCHOR LINKS
 // ============================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -55,6 +55,52 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ============================================
+// TYPEWRITER EFFECT
+// ============================================
+const typewriterOptions = [
+    'Full Stack Developer',
+    'Python Engineer',
+    'React Developer',
+    'Problem Solver',
+    'AI App Builder'
+];
+
+let typewriterIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+const typewriterElement = document.querySelector('.typewriter-text');
+
+if (typewriterElement) {
+    function typeWriter() {
+        const currentText = typewriterOptions[typewriterIndex];
+        
+        if (isDeleting) {
+            typewriterElement.textContent = currentText.substring(0, charIndex - 1);
+            charIndex--;
+            
+            if (charIndex === 0) {
+                isDeleting = false;
+                typewriterIndex = (typewriterIndex + 1) % typewriterOptions.length;
+            }
+        } else {
+            typewriterElement.textContent = currentText.substring(0, charIndex + 1);
+            charIndex++;
+            
+            if (charIndex === currentText.length) {
+                isDeleting = true;
+                return;
+            }
+        }
+        
+        const speed = isDeleting ? 50 : 100;
+        const pauseTime = charIndex === currentText.length ? 2000 : speed;
+        setTimeout(typeWriter, pauseTime);
+    }
+    
+    typeWriter();
+}
+
+// ============================================
 // INTERSECTION OBSERVER FOR SECTIONS
 // ============================================
 const observerOptions = {
@@ -65,7 +111,8 @@ const observerOptions = {
 const sectionObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+            entry.target.style.opacity = '1';
+            entry.target.style.animation = 'fadeInSection 0.6s ease';
         }
     });
 }, observerOptions);
@@ -81,7 +128,7 @@ document.querySelectorAll('section').forEach(section => {
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-link');
 
-window.addEventListener('scroll', () => {
+function updateActiveNavLink() {
     let current = '';
     
     sections.forEach(section => {
@@ -99,61 +146,146 @@ window.addEventListener('scroll', () => {
             link.classList.add('active');
         }
     });
+}
+
+window.addEventListener('scroll', updateActiveNavLink);
+
+// ============================================
+// BLOG ACCORDION EXPAND/COLLAPSE
+// ============================================
+const blogToggles = document.querySelectorAll('.blog-toggle');
+
+blogToggles.forEach(toggle => {
+    toggle.addEventListener('click', function() {
+        const postId = this.getAttribute('data-post');
+        const contentElement = document.getElementById(`blog-content-${postId}`);
+        
+        if (contentElement) {
+            const isExpanded = contentElement.classList.contains('expanded');
+            
+            // Close all other blog posts
+            document.querySelectorAll('.blog-content').forEach(content => {
+                content.classList.remove('expanded');
+            });
+            
+            document.querySelectorAll('.blog-toggle').forEach(btn => {
+                btn.textContent = 'Read More';
+            });
+            
+            // Toggle current post
+            if (!isExpanded) {
+                contentElement.classList.add('expanded');
+                this.textContent = 'Read Less';
+            }
+        }
+    });
 });
 
 // ============================================
-// COUNTER ANIMATION FOR STATS
+// BACK TO TOP BUTTON
 // ============================================
-function animateCounter(element, target) {
-    let current = 0;
-    const increment = target / 100;
-    const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-            current = target;
-            clearInterval(timer);
-        }
-        
-        if (target === 100) {
-            element.textContent = Math.floor(current) + '%';
-        } else {
-            element.textContent = Math.floor(current) + '+';
-        }
-    }, 20);
-}
+const backToTopButton = document.getElementById('backToTop');
 
-// Trigger counter animation when stats section is visible
-const statsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const statNumbers = entry.target.querySelectorAll('.stat-number');
-            statNumbers.forEach((stat, index) => {
-                const targets = [3, 50, 100];
-                setTimeout(() => {
-                    animateCounter(stat, targets[index]);
-                }, index * 200);
-            });
-            statsObserver.unobserve(entry.target);
-        }
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        backToTopButton.classList.add('show');
+    } else {
+        backToTopButton.classList.remove('show');
+    }
+});
+
+if (backToTopButton) {
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     });
-}, { threshold: 0.5 });
-
-const statsSection = document.querySelector('.stats');
-if (statsSection) {
-    statsObserver.observe(statsSection);
 }
 
 // ============================================
-// CONTACT FORM HANDLING
+// CONTACT FORM - EmailJS INTEGRATION
 // ============================================
-const contactForm = document.querySelector('.contact-form');
+// To set up EmailJS:
+// 1. Go to https://www.emailjs.com
+// 2. Create an account and set up your email service
+// 3. Create an email template
+// 4. Replace the values below with your actual credentials:
+//    - SERVICE_ID
+//    - TEMPLATE_ID
+//    - PUBLIC_KEY
+
+// Initialize EmailJS (currently commented out until credentials are provided)
+/*
+emailjs.init('YOUR_PUBLIC_KEY');
+
+const contactForm = document.getElementById('contactForm');
+
 if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        // Allow mailto to work, but add visual feedback
-        const submitBtn = contactForm.querySelector('button');
-        const originalText = submitBtn.textContent;
-        submitBtn.textContent = 'Opening email client...';
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
         
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+        
+        // Get form values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+        
+        // Send email via EmailJS
+        emailjs.send('SERVICE_ID', 'TEMPLATE_ID', {
+            from_name: name,
+            from_email: email,
+            subject: subject,
+            message: message,
+            to_email: 'zachndungu861@gmail.com'
+        }).then(function(response) {
+            console.log('SUCCESS', response.status, response.text);
+            submitBtn.textContent = 'Message Sent! ✓';
+            contactForm.reset();
+            
+            setTimeout(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 3000);
+        }, function(error) {
+            console.log('FAILED', error);
+            submitBtn.textContent = 'Error - Try Again';
+            
+            setTimeout(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 3000);
+        });
+    });
+}
+*/
+
+// Fallback: Contact form submission handler
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        
+        // Get form values for mailto fallback
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+        
+        // Create mailto link with form data
+        const mailtoLink = `mailto:zachndungu861@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`From: ${name} (${email})\n\n${message}`)}`;
+        
+        window.location.href = mailtoLink;
+        
+        submitBtn.textContent = 'Opening email...';
         setTimeout(() => {
             submitBtn.textContent = originalText;
         }, 2000);
@@ -161,10 +293,12 @@ if (contactForm) {
 }
 
 // ============================================
-// ANIMATE ELEMENTS ON SCROLL
+// SMOOTH ANIMATION FOR ELEMENTS ON SCROLL
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
-    const animateElements = document.querySelectorAll('.skill-item, .project-card, .stat');
+    const animateElements = document.querySelectorAll(
+        '.skill-badge, .project-card, .skill-card, .metric-card, .blog-card, .contact-card'
+    );
     
     const elementObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -178,10 +312,22 @@ document.addEventListener('DOMContentLoaded', () => {
         rootMargin: '0px 0px -50px 0px'
     });
     
-    animateElements.forEach(el => {
+    animateElements.forEach((el, index) => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        el.style.transition = `opacity 0.6s ease ${index * 0.05}s, transform 0.6s ease ${index * 0.05}s`;
         elementObserver.observe(el);
     });
+});
+
+// ============================================
+// PREVENT HAMBURGER MENU ACTIVE STATE ANIMATION ISSUES
+// ============================================
+const hamburgerSpans = document.querySelectorAll('.mobile-hamburger span');
+document.addEventListener('click', () => {
+    if (!mobileHamburger.classList.contains('active')) {
+        hamburgerSpans.forEach(span => {
+            span.style.transform = 'none';
+        });
+    }
 });
